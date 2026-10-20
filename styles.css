@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #f2f0ff;
+  padding: 60px 20px;
+}
+
+.datepicker {
+  position: relative;
+  width: 330px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.campo {
+  display: flex;
+  border: 2px solid #5145a5;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 6px 18px #5145a51a;
+}
+
+.campo input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+.campo input::placeholder {
+  color: #918bb9;
+}
+
+.campo button {
+  width: 48px;
+  border: none;
+  background-color: #5145a5;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.campo button:hover {
+  background-color: #342b79;
+}
+
+.calendario {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 8px;
+  border: 2px solid #5145a5;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 10px 24px #342b791c;
+}
+
+.mes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  background-color: #5145a5;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.triangulo {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  cursor: pointer;
+}
+
+.izq {
+  border-right: 12px solid #ffffff;
+}
+
+.der {
+  border-left: 12px solid #ffffff;
+}
+
+.semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  padding: 8px 0;
+  background-color: #e7e3ff;
+  color: #5145a5;
+  font-weight: 700;
+  border-bottom: 1px solid #d2ccfa;
+}
+
+.dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.dias div {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #eeeafd;
+  border-bottom: 1px solid #eeeafd;
+  color: #37334f;
+  transition: background-color 0.2s;
+}
+
+.dias div:not(.vacio):hover {
+  background-color: #e7e3ff;
+  color: #342b79;
+  cursor: pointer;
+}
+
+.dias div:nth-child(7n) {
+  border-right: none;
+}
+
+.dias div:nth-last-child(-n+7) {
+  border-bottom: none;
+}
+
+@media (max-width: 380px) {
+  body {
+    padding: 40px 14px;
+  }
+
+  .dias div {
+    height: 38px;
+  }
+}
